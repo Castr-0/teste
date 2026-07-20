@@ -1,189 +1,229 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="pt">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liga de Futebol</title>
 
-    <!-- Basic Page Needs
-	================================================== -->
-    <title>GameOver - welcome page</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-    <!-- Favicons
-	================================================== -->
-    <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/favicon-120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/favicon-152.png">
+body{
+    background:#eef2f5;
+}
 
-    <!-- Mobile Specific Metas
-	================================================== -->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+header{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+}
 
-    <!-- Google Web Fonts
-	================================================== -->
-    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet">
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:30px auto;
+}
 
-    <!-- CSS
-	================================================== -->
-    <!-- Vendor CSS -->
-    <link href="assets/vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
-    <link href="assets/vendor/slick/css/slick.css" rel="stylesheet">
-    <link href="assets/vendor/nanoscroller/css/nanoscroller.css" rel="stylesheet">
-    <link href="assets/vendor/fontawesome/css/brands.css" rel="stylesheet">
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
 
-    <!-- Template CSS-->
-    <link href="assets/css/style.css" rel="stylesheet">
+thead{
+    background:#1565c0;
+    color:white;
+}
 
-    
+th, td{
+    padding:14px;
+    text-align:center;
+}
+
+tbody tr:nth-child(even){
+    background:#f5f5f5;
+}
+
+tbody tr:hover{
+    background:#dbe9ff;
+}
+
+.pos{
+    font-weight:bold;
+}
+
+.champion{
+    background:#c8e6c9 !important;
+}
+
+.europe{
+    background:#dcedc8 !important;
+}
+
+.relegation{
+    background:#ffcdd2 !important;
+}
+
+footer{
+    margin-top:20px;
+    text-align:center;
+    color:#666;
+    padding:15px;
+}
+</style>
 
 </head>
+<body>
 
-<body class="site-layout--landing preloader-is--active bg-image bg-fixed bg--texture-05">
+<header>
+    <h1>🏆 Liga de Futebol</h1>
+    <p>Época 2026/2027</p>
+</header>
 
-    <div class="site-wrapper">
+<div class="container">
 
-        <!-- Header
-		================================================== -->
-        <header id="header" class="site-header site-header--landing">
+<table>
 
-            <!-- Main Navigation Left -->
-            <nav class="main-nav">
-                <ul class="main-nav__list">
-                    <li class=""><a href="Home.html">Home</a></li>
-                    <li class="">
-                        <a href="#">Teams</a>
-                        
-                    </li>
-                    <li class=""><a href="#">About Us</a>
-                        
-                    </li>
-                </ul>
-            </nav>
-            <!-- Main Navigation Left / End -->
+<thead>
+<tr>
+<th>Pos</th>
+<th>Equipa</th>
+<th>J</th>
+<th>V</th>
+<th>E</th>
+<th>D</th>
+<th>GM</th>
+<th>GS</th>
+<th>DG</th>
+<th>Pts</th>
+</tr>
+</thead>
 
-            <!-- Logo - Image Based -->
-            <div class="header-logo header-logo--img">
-                <a href="index.html"><img src="assets/img/logo-re.png"  width="500px" height="200px" alt="Necromancers"></a>
-            </div>
-            <!-- Logo - Image Based / End -->
+<tbody>
 
-            <!-- Main Navigation Right -->
-            <nav class="main-nav">
-                <ul class="main-nav__list">
-                    <li class=""><a href="#">News</a>
-                        
-                    </li>
-                    <li class=" has-child"><a href="#">call us</a>
-                        
-                        
-                    </li>
-                    <li class="">
-                        <a href="Home.html">Shop</a>
-                        
-                    </li>
-                </ul>
-            </nav>
-            <!-- Main Navigation Right / End -->
-        </header>
-        <!-- Header / End -->
+<tr class="champion">
+<td class="pos">1</td>
+<td>FC Porto</td>
+<td>10</td>
+<td>8</td>
+<td>1</td>
+<td>1</td>
+<td>24</td>
+<td>9</td>
+<td>+15</td>
+<td><strong>25</strong></td>
+</tr>
 
-        <!-- Content
-		================================================== -->
-        <main class="site-content text-center" id="wrapper">
+<tr class="europe">
+<td class="pos">2</td>
+<td>Sporting CP</td>
+<td>10</td>
+<td>7</td>
+<td>2</td>
+<td>1</td>
+<td>22</td>
+<td>10</td>
+<td>+12</td>
+<td><strong>23</strong></td>
+</tr>
 
-            <div class="site-content__center">
-                <h1 class="text-white landing-title"><span class="subtitle landing-subtitle">Download and Develop</span>Game Over</h1>
-                <a href="Login.html" class="btn btn-primary btn-lg btn--landing"><span>Start Browsing!</span></a>
-            </div>
+<tr class="europe">
+<td class="pos">3</td>
+<td>SL Benfica</td>
+<td>10</td>
+<td>7</td>
+<td>1</td>
+<td>2</td>
+<td>20</td>
+<td>11</td>
+<td>+9</td>
+<td><strong>22</strong></td>
+</tr>
 
-        </main>
+<tr>
+<td class="pos">4</td>
+<td>SC Braga</td>
+<td>10</td>
+<td>6</td>
+<td>2</td>
+<td>2</td>
+<td>19</td>
+<td>12</td>
+<td>+7</td>
+<td>20</td>
+</tr>
 
-        <!-- Footer
-		================================================== -->
-        <footer id="footer" class="footer text-center">
-            <ul class="social-menu social-menu--landing social-menu--landing-glitch">
-                <li>
-                    <a href="https://www.facebook.com" target="_blank">
-						<i class="fab fa-facebook-square"></i>
-						<span class="link-subtitle">Facebook</span>GAME-OVER
-					</a>
-                </li>
-                <li>
-                    <a href="https://twitter.com" target="_blank">
-						<i class="fab fa-twitter"></i>
-						<span class="link-subtitle">Twitter</span>GAME-OVERTW
-					</a>
-                </li>
-                <li>
-                    <a href="https://twitch.tv" target="_blank">
-						<i class="fab fa-twitch"></i>
-						<span class="link-subtitle">Twitch</span>GAME-OVERTW
-					</a>
-                </li>
-                <li>
-                    <a href="https://discordapp.com/" target="_blank">
-						<i class="fab fa-discord"></i>
-						<span class="link-subtitle">Discord</span>GAME-OVER-DS
-					</a>
-                </li>
-            </ul>
-        </footer>
-        <!-- Footer / End -->
+<tr>
+<td class="pos">5</td>
+<td>Vitória SC</td>
+<td>10</td>
+<td>5</td>
+<td>3</td>
+<td>2</td>
+<td>16</td>
+<td>11</td>
+<td>+5</td>
+<td>18</td>
+</tr>
 
-        <div class="landing-detail landing-detail--left">
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-        </div>
-        <div class="landing-detail-cover landing-detail-cover--left">
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-        </div>
-        <div class="landing-detail landing-detail--right">
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-        </div>
-        <div class="landing-detail-cover landing-detail-cover--right">
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-        </div>
-        <!-- Overlay -->
-        <div class="site-overlay"></div>
-        <!-- Overlay / End -->
+<tr>
+<td class="pos">6</td>
+<td>Boavista</td>
+<td>10</td>
+<td>4</td>
+<td>2</td>
+<td>4</td>
+<td>14</td>
+<td>15</td>
+<td>-1</td>
+<td>14</td>
+</tr>
 
+<tr>
+<td class="pos">7</td>
+<td>Casa Pia</td>
+<td>10</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>12</td>
+<td>15</td>
+<td>-3</td>
+<td>12</td>
+</tr>
 
-    </div>
+<tr class="relegation">
+<td class="pos">8</td>
+<td>Estrela Amadora</td>
+<td>10</td>
+<td>2</td>
+<td>2</td>
+<td>6</td>
+<td>10</td>
+<td>20</td>
+<td>-10</td>
+<td>8</td>
+</tr>
 
-    <div class="preloader-overlay">
-        <div id="js-preloader" class="preloader">
-            <div class="preloader-inner fadeInUp">
-                <div class="pong-loader"></div>
-                <svg role="img" class="df-icon df-icon--preloader-arcade">
-					<use xlink:href="assets/img/necromancers.svg#preloader-arcade"/>
-				</svg>
-            </div>
-        </div>
-    </div>
+</tbody>
 
-    <!-- The cursor elements -->
-    <div class="df-custom-cursor-wrap">
-        <div id="df-custom-cursor"></div>
-    </div>
+</table>
 
-    <!-- Javascript Files
-	================================================== -->
-    <!-- JS -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/js/init.js"></script>
-    
+</div>
 
-    
-    
+<footer>
+© 2026 Liga de Futebol
+</footer>
 
 </body>
-
 </html>
