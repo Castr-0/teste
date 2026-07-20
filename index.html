@@ -6,10 +6,15 @@
 <title>Liga de Futebol</title>
 
 <style>
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#eef2f5;
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef2f5;
     padding:30px;
 }
 
@@ -20,20 +25,19 @@ body{
 
 h1{
     text-align:center;
-    color:#0d47a1;
-    margin-bottom:40px;
+    color:#0D47A1;
+    margin-bottom:30px;
 }
 
 h2{
-    color:#0d47a1;
-    margin-top:40px;
-    margin-bottom:15px;
+    color:#0D47A1;
+    margin:35px 0 15px;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    background:white;
+    background:#fff;
     border-radius:10px;
     overflow:hidden;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
@@ -41,18 +45,18 @@ table{
 }
 
 thead{
-    background:#1565c0;
+    background:#1565C0;
     color:white;
 }
 
-th,td{
+th, td{
     padding:14px;
     text-align:center;
     border-bottom:1px solid #ddd;
 }
 
 tbody tr:hover{
-    background:#eef5ff;
+    background:#f3f8ff;
 }
 
 .equipa{
@@ -60,13 +64,38 @@ tbody tr:hover{
     font-weight:bold;
 }
 
+.pontos{
+    font-weight:bold;
+}
+
+/* Cores da classificação */
+
+.champion{
+    background:#FFD700 !important;
+    font-weight:bold;
+}
+
+.top{
+    background:#C8E6C9 !important;
+}
+
+.playoff{
+    background:#FFE0B2 !important;
+}
+
+.relegation{
+    background:#FFCDD2 !important;
+}
+
+/* Tendências */
+
 .subida{
-    color:#2e7d32;
+    color:#2E7D32;
     font-size:22px;
 }
 
 .descida{
-    color:#c62828;
+    color:#C62828;
     font-size:22px;
 }
 
@@ -75,19 +104,47 @@ tbody tr:hover{
     font-size:22px;
 }
 
-.pontos{
+/* Legenda */
+
+.legenda{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.legenda span{
+    padding:8px 14px;
+    border-radius:8px;
     font-weight:bold;
 }
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#666;
+}
+
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
 
 <h1>🏆 Liga de Futebol</h1>
 
+<div class="legenda">
+    <span class="champion">🥇 Campeão</span>
+    <span class="top">🟢 2.º ao 5.º Lugar</span>
+    <span class="playoff">🟠 Playoff</span>
+    <span class="relegation">🔴 Despromoção</span>
+</div>
+
 <!-- PRIMEIRA DIVISÃO -->
+
 <h2>Primeira Divisão</h2>
 
 <table>
@@ -95,53 +152,93 @@ tbody tr:hover{
 <thead>
 <tr>
     <th>Equipa</th>
-    <th>Pontos</th>
     <th>Jornadas</th>
-    <th>MVP da Jornada</th>
+    <th>MVP</th>
+    <th>Pontos</th>
     <th>Tendência</th>
 </tr>
 </thead>
 
 <tbody>
 
-<tr>
+<tr class="champion">
     <td class="equipa">FC Porto</td>
-    <td class="pontos">32</td>
     <td>12</td>
     <td>4</td>
+    <td class="pontos">32</td>
     <td class="subida">⬆️</td>
 </tr>
 
-<tr>
+<tr class="top">
     <td class="equipa">Sporting CP</td>
-    <td class="pontos">30</td>
     <td>12</td>
     <td>3</td>
+    <td class="pontos">30</td>
     <td class="mantem">➖</td>
 </tr>
 
-<tr>
+<tr class="top">
     <td class="equipa">SL Benfica</td>
-    <td class="pontos">28</td>
     <td>12</td>
     <td>2</td>
+    <td class="pontos">28</td>
     <td class="descida">⬇️</td>
 </tr>
 
-<tr>
+<tr class="top">
     <td class="equipa">SC Braga</td>
-    <td class="pontos">24</td>
+    <td>12</td>
+    <td>2</td>
+    <td class="pontos">25</td>
+    <td class="subida">⬆️</td>
+</tr>
+
+<tr class="top">
+    <td class="equipa">Vitória SC</td>
     <td>12</td>
     <td>1</td>
+    <td class="pontos">23</td>
+    <td class="mantem">➖</td>
+</tr>
+
+<tr>
+    <td class="equipa">Boavista</td>
+    <td>12</td>
+    <td>1</td>
+    <td class="pontos">18</td>
     <td class="subida">⬆️</td>
 </tr>
 
 <tr>
-    <td class="equipa">Vitória SC</td>
-    <td class="pontos">20</td>
+    <td class="equipa">Casa Pia</td>
     <td>12</td>
     <td>1</td>
+    <td class="pontos">16</td>
     <td class="mantem">➖</td>
+</tr>
+
+<tr class="playoff">
+    <td class="equipa">Estoril</td>
+    <td>12</td>
+    <td>0</td>
+    <td class="pontos">12</td>
+    <td class="descida">⬇️</td>
+</tr>
+
+<tr class="relegation">
+    <td class="equipa">Farense</td>
+    <td>12</td>
+    <td>0</td>
+    <td class="pontos">10</td>
+    <td class="descida">⬇️</td>
+</tr>
+
+<tr class="relegation">
+    <td class="equipa">Arouca</td>
+    <td>12</td>
+    <td>0</td>
+    <td class="pontos">8</td>
+    <td class="descida">⬇️</td>
 </tr>
 
 </tbody>
@@ -149,6 +246,7 @@ tbody tr:hover{
 </table>
 
 <!-- SEGUNDA DIVISÃO -->
+
 <h2>Segunda Divisão</h2>
 
 <table>
@@ -156,58 +254,102 @@ tbody tr:hover{
 <thead>
 <tr>
     <th>Equipa</th>
-    <th>Pontos</th>
     <th>Jornadas</th>
-    <th>MVP da Jornada</th>
+    <th>MVP</th>
+    <th>Pontos</th>
     <th>Tendência</th>
 </tr>
 </thead>
 
 <tbody>
 
-<tr>
+<tr class="champion">
     <td class="equipa">Académica</td>
-    <td class="pontos">29</td>
     <td>12</td>
-    <td>3</td>
+    <td>4</td>
+    <td class="pontos">31</td>
     <td class="subida">⬆️</td>
 </tr>
 
-<tr>
+<tr class="top">
     <td class="equipa">Leixões</td>
-    <td class="pontos">27</td>
+    <td>12</td>
+    <td>3</td>
+    <td class="pontos">29</td>
+    <td class="subida">⬆️</td>
+</tr>
+
+<tr class="top">
+    <td class="equipa">Feirense</td>
     <td>12</td>
     <td>2</td>
+    <td class="pontos">27</td>
+    <td class="mantem">➖</td>
+</tr>
+
+<tr class="top">
+    <td class="equipa">Penafiel</td>
+    <td>12</td>
+    <td>2</td>
+    <td class="pontos">24</td>
+    <td class="subida">⬆️</td>
+</tr>
+
+<tr class="top">
+    <td class="equipa">Oliveirense</td>
+    <td>12</td>
+    <td>1</td>
+    <td class="pontos">22</td>
     <td class="mantem">➖</td>
 </tr>
 
 <tr>
-    <td class="equipa">Feirense</td>
-    <td class="pontos">25</td>
-    <td>12</td>
-    <td>2</td>
-    <td class="subida">⬆️</td>
-</tr>
-
-<tr>
-    <td class="equipa">Penafiel</td>
-    <td class="pontos">22</td>
+    <td class="equipa">Tondela</td>
     <td>12</td>
     <td>1</td>
+    <td class="pontos">18</td>
     <td class="descida">⬇️</td>
 </tr>
 
 <tr>
-    <td class="equipa">Oliveirense</td>
-    <td class="pontos">18</td>
+    <td class="equipa">Torreense</td>
     <td>12</td>
     <td>0</td>
+    <td class="pontos">16</td>
     <td class="mantem">➖</td>
+</tr>
+
+<tr class="playoff">
+    <td class="equipa">Mafra</td>
+    <td>12</td>
+    <td>0</td>
+    <td class="pontos">12</td>
+    <td class="descida">⬇️</td>
+</tr>
+
+<tr class="relegation">
+    <td class="equipa">Vilaverdense</td>
+    <td>12</td>
+    <td>0</td>
+    <td class="pontos">10</td>
+    <td class="descida">⬇️</td>
+</tr>
+
+<tr class="relegation">
+    <td class="equipa">Olhanense</td>
+    <td>12</td>
+    <td>0</td>
+    <td class="pontos">8</td>
+    <td class="descida">⬇️</td>
 </tr>
 
 </tbody>
 
 </table>
+
+<footer>
+Liga de Futebol © 2026
+</footer>
 
 </div>
 
