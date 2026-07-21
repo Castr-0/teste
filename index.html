@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Liga Record - Craques de Bar</title>
+<title>Liga de Futebol</title>
 
 <style>
 
@@ -73,7 +73,9 @@ body {
 }
 
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo {
 
@@ -533,6 +535,10 @@ td:last-child {
 }
 
 
+/* =========================
+   BOTÃO DO HISTÓRICO
+========================= */
+
 .history-item {
 
     display: flex;
@@ -540,8 +546,6 @@ td:last-child {
     align-items: center;
 
     justify-content: space-between;
-
-    text-decoration: none;
 
     background: #f8fafc;
 
@@ -554,6 +558,8 @@ td:last-child {
     color: #0f172a;
 
     font-weight: 700;
+
+    cursor: pointer;
 
     transition:
         transform 0.2s,
@@ -580,6 +586,185 @@ td:last-child {
     color: #2563eb;
 
     font-size: 20px;
+
+}
+
+
+/* =========================
+   MODAL / POP-UP
+========================= */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(2, 6, 23, 0.88);
+
+    backdrop-filter: blur(8px);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+}
+
+
+.modal.active {
+
+    display: flex;
+
+}
+
+
+/* CONTEÚDO DO MODAL */
+
+.modal-content {
+
+    position: relative;
+
+    max-width: 1000px;
+
+    max-height: 90vh;
+
+    width: auto;
+
+    animation:
+        modalEntrada 0.25s ease;
+
+}
+
+
+@keyframes modalEntrada {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.92);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* IMAGEM DA CLASSIFICAÇÃO */
+
+.modal-content img {
+
+    display: block;
+
+    max-width: 100%;
+
+    max-height: 82vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.5);
+
+    background: white;
+
+}
+
+
+/* BOTÃO FECHAR */
+
+.close-modal {
+
+    position: absolute;
+
+    top: -18px;
+
+    right: -18px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #0f172a;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.3);
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+
+}
+
+
+.close-modal:hover {
+
+    transform: rotate(90deg);
+
+    background: #f1f5f9;
+
+}
+
+
+/* TÍTULO DA IMAGEM */
+
+.modal-title {
+
+    position: absolute;
+
+    bottom: -45px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
 
 }
 
@@ -665,11 +850,37 @@ footer {
 
     }
 
+    .modal {
+
+        padding: 20px;
+
+    }
+
+    .modal-content img {
+
+        max-height: 75vh;
+
+    }
+
+    .close-modal {
+
+        top: -15px;
+
+        right: -8px;
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 24px;
+
+    }
+
 }
 
 
 /* =========================
-   LOGO HISTORY MOBILE
+   MOBILE PEQUENO
 ========================= */
 
 @media (max-width: 450px) {
@@ -677,6 +888,14 @@ footer {
     .history-grid {
 
         grid-template-columns: 1fr;
+
+    }
+
+    .modal-title {
+
+        bottom: -35px;
+
+        font-size: 13px;
 
     }
 
@@ -697,7 +916,15 @@ footer {
 <div class="header">
 
 ```
-href="https://raw.githubusercontent.com/Castr-0/teste/refs/heads/main/file%20(1).png"
+<!--
+    LOGOTIPO DA LIGA
+
+    Coloca o ficheiro "logo.png"
+    na mesma pasta deste HTML.
+
+    Se o teu ficheiro tiver outro nome,
+    altera o "src".
+-->
 
 <img
     src="logo.png"
@@ -706,7 +933,7 @@ href="https://raw.githubusercontent.com/Castr-0/teste/refs/heads/main/file%20(1)
 >
 
 
-<h1>🏆 Liga Record - Craques de Bar</h1>
+<h1>🏆 Liga de Futebol</h1>
 
 <p>
     Classificação geral da época 2026/2027
@@ -1398,13 +1625,13 @@ href="https://raw.githubusercontent.com/Castr-0/teste/refs/heads/main/file%20(1)
 
 
     <!-- =========================
-         ÉPOCA 2025/2026
+         2025 / 2026
     ========================= -->
 
-    <a
-        href="LINK_DA_IMAGEM_2025_2026"
-        target="_blank"
+    <div
         class="history-item"
+        data-image="classificacao-2025-2026.jpg"
+        data-title="Classificação da época 2025/2026"
     >
 
         <span>
@@ -1415,17 +1642,18 @@ href="https://raw.githubusercontent.com/Castr-0/teste/refs/heads/main/file%20(1)
             ↗
         </span>
 
-    </a>
+    </div>
+
 
 
     <!-- =========================
-         ÉPOCA 2024/2025
+         2024 / 2025
     ========================= -->
 
-    <a
-        href="LINK_DA_IMAGEM_2024_2025"
-        target="_blank"
+    <div
         class="history-item"
+        data-image="classificacao-2024-2025.jpg"
+        data-title="Classificação da época 2024/2025"
     >
 
         <span>
@@ -1436,17 +1664,18 @@ href="https://raw.githubusercontent.com/Castr-0/teste/refs/heads/main/file%20(1)
             ↗
         </span>
 
-    </a>
+    </div>
+
 
 
     <!-- =========================
-         ÉPOCA 2023/2024
+         2023 / 2024
     ========================= -->
 
-    <a
-        href="LINK_DA_IMAGEM_2023_2024"
-        target="_blank"
+    <div
         class="history-item"
+        data-image="classificacao-2023-2024.jpg"
+        data-title="Classificação da época 2023/2024"
     >
 
         <span>
@@ -1457,7 +1686,48 @@ href="https://raw.githubusercontent.com/Castr-0/teste/refs/heads/main/file%20(1)
             ↗
         </span>
 
-    </a>
+    </div>
+
+
+</div>
+```
+
+</div>
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div class="modal" id="historyModal">
+
+```
+<div class="modal-content">
+
+
+    <button
+        class="close-modal"
+        id="closeModal"
+        aria-label="Fechar"
+    >
+
+        ×
+
+    </button>
+
+
+    <img
+        id="historyImage"
+        src=""
+        alt="Classificação histórica"
+    >
+
+
+    <div
+        class="modal-title"
+        id="modalTitle"
+    >
+
+    </div>
 
 
 </div>
@@ -1472,6 +1742,138 @@ Liga de Futebol © 2026
 </footer>
 
 </div>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================
+   ELEMENTOS DO MODAL
+========================= */
+
+const modal =
+    document.getElementById("historyModal");
+
+const historyImage =
+    document.getElementById("historyImage");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const closeModal =
+    document.getElementById("closeModal");
+
+
+/* =========================
+   BOTÕES DO HISTÓRICO
+========================= */
+
+const historyItems =
+    document.querySelectorAll(".history-item");
+
+
+/* =========================
+   ABRIR MODAL
+========================= */
+
+historyItems.forEach(item => {
+
+    item.addEventListener("click", function() {
+
+        const image =
+            this.getAttribute("data-image");
+
+        const title =
+            this.getAttribute("data-title");
+
+
+        historyImage.src = image;
+
+        historyImage.alt = title;
+
+        modalTitle.textContent = title;
+
+
+        modal.classList.add("active");
+
+
+        /* Impede o scroll da página */
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+
+/* =========================
+   FECHAR MODAL
+========================= */
+
+function fecharModal() {
+
+    modal.classList.remove("active");
+
+    historyImage.src = "";
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================
+   BOTÃO X
+========================= */
+
+closeModal.addEventListener(
+    "click",
+    fecharModal
+);
+
+
+/* =========================
+   CLICAR FORA DA IMAGEM
+========================= */
+
+modal.addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === modal) {
+
+            fecharModal();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   TECLA ESC
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("active")
+        ) {
+
+            fecharModal();
+
+        }
+
+    }
+);
+
+
+</script>
 
 </body>
 </html>
